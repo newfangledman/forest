@@ -1,12 +1,13 @@
 var fs = require("fs")
-var obj = JSON.parse(fs.readFileSync("./data.json", "utf8"))
+var data = JSON.parse(fs.readFileSync("./data.json", "utf8"))
 
-const data = []
+const cleanData = []
 
-for (const key in obj) {
-  data.push(createObj(obj))
+for (const plant in data) {
+  cleanData.push(createObj(data[plant]))
 }
 
-function createObj(obj) {
+function createObj(plant) {
+  console.log(plant)
   const base = {}
 }
