@@ -1,13 +1,19 @@
 const { gql } = require("apollo-server-lambda")
 
 module.exports.typeDefs = gql`
-  type Orders {
+  type Plant {
     id: String!
-    amount: Float!
-    tax: Float!
-    total: Float!
+    commonName: String!
+    wiki: String!
+    latinName: String!
+    imageUrl: String!
+    shade: String!
+    sun: String!
+    water: String!
+    hardinessZone: String!
+    headZone: String!
   }
   type Query {
-    getOrders: [Orders]
+    getPlants: [Plant]
   }
 `
