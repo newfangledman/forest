@@ -15,5 +15,6 @@ module.exports.typeDefs = gql`
   }
   type Query {
     getPlants: [Plant]
+    getPlantsBy: [Plant]
   }
 `

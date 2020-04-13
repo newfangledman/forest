@@ -4,8 +4,9 @@ module.exports.resolvers = {
       const result = await dataSources.plantsAPI.getPlants()
       return result.data
     },
-    getPlantsBy: async (_, __) => {
-      return ""
+    getPlantsBy: async (_, args) => {
+      console.log(arg)
+      return []
     },
   },
 }
