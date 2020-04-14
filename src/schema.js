@@ -11,10 +11,19 @@ module.exports.typeDefs = gql`
     sun: String!
     water: String!
     hardinessZone: String!
-    headZone: String!
+    heatZone: String!
   }
   type Query {
     getPlants: [Plant]
-    getPlantsBy: [Plant]
+    getPlantsBy(
+      commonName: String
+      latinName: String
+      imageUrl: String
+      shade: String
+      sun: String
+      water: String
+      hardinessZone: String
+      heatZone: String
+    ): [Plant]
   }
 `
