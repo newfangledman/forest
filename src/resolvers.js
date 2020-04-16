@@ -5,7 +5,7 @@ module.exports.resolvers = {
       return result.data
     },
     getPlantsBy: async (_, args) => {
-      console.log(args)
+      console.log( _, args)
       return []
     },
   },
