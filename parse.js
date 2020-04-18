@@ -22,7 +22,7 @@ function split(text) {
 
 function createObj(plant, { printouts }) {
   const attributeGetter = getAttributeValue(printouts)
-  return {
+  const base = {
     id: uid(),
     commonName: attributeGetter("common name", "fulltext"),
     wiki: attributeGetter("common name", "fullurl"),
@@ -30,13 +30,20 @@ function createObj(plant, { printouts }) {
     imageUrl: attributeGetter("image", "fullurl"),
     shade: split(attributeGetter("shade tolerance", "fulltext")),
     sun:
-      split(attributeGetter("shade tolerance", "fulltext")) === "Permanent"
+      split(attributeGetter("shade tolerance", "fulltext")) === "permanent"
         ? "Light"
         : split(attributeGetter("sun preference", "fulltext")),
     water: attributeGetter("water requirements"),
     hardinessZone: attributeGetter("hardiness zone", "fulltext"),
     heatZone: attributeGetter("heat zone"),
   }
+
+  const result = {}
+  for (const [key, value] of Object.entries(base)) {
+    result[key.toLowerCase()] =
+      typeof value === "string" ? value.toLowerCase() : value
+  }
+  return result
 }
 fs.writeFile("db.json", JSON.stringify({ data: [...data] }), (e) => {
   if (e) {
