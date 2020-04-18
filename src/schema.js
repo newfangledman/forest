@@ -11,8 +11,8 @@ module.exports.typeDefs = gql`
   enum Sun {
     FULL
     PARTIAL
-    NONE
-  }
+    LIGHT  
+}
 
   enum Water {
     AQUATIC

@@ -9,7 +9,7 @@ for (const plant in input) {
 }
 
 function getAttributeValue(data) {
-  return function (key, attribute = false) {
+  return function(key, attribute = false) {
     const base = data[`Has ${key}`][0]
     const value = base ? (attribute ? base[attribute] : base) : ""
     return value
@@ -29,7 +29,10 @@ function createObj(plant, { printouts }) {
     latinName: plant,
     imageUrl: attributeGetter("image", "fullurl"),
     shade: split(attributeGetter("shade tolerance", "fulltext")),
-    sun: split(attributeGetter("sun preference", "fulltext")),
+    sun:
+      split(attributeGetter("shade tolerance", "fulltext")) === "Permanent"
+        ? "Light"
+        : split(attributeGetter("sun preference", "fulltext")),
     water: attributeGetter("water requirements"),
     hardinessZone: attributeGetter("hardiness zone", "fulltext"),
     heatZone: attributeGetter("heat zone"),
