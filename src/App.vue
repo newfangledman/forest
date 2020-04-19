@@ -1,20 +1,14 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+    FOREST
   </div>
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-import HelloWorld from "./components/HelloWorld.vue";
-
-export default Vue.extend({
+export default {
   name: "App",
-  components: {
-    HelloWorld
-  }
-});
+  components: {}
+};
 </script>
 
 <style lang="scss">
