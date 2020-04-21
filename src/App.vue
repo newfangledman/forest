@@ -1,13 +1,16 @@
 <template>
   <div id="app">
-    FOREST
+    <plants-view></plants-view>
   </div>
 </template>
 
-<script lang="ts">
+<script>
+import PlantsView from "@/containers/PlantsView";
 export default {
   name: "App",
-  components: {}
+  components: {
+    [PlantsView.name]: PlantsView
+  }
 };
 </script>
 

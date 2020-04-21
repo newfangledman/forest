@@ -1,12 +1,18 @@
 <template>
-  <div></div>
+  <div>{{ query }}</div>
 </template>
 
 <script>
 import useSearch from "@/use/search";
 export default {
-  setup() {
-    return { ...useSearch() };
+  name: "SearchBar",
+  props: {
+    searchOnAttribute: { type: String, default: "commonName" },
+    query: { type: String, default: "" },
+    toSearch: { type: Array, default: () => [] }
+  },
+  setup(props) {
+    return { ...useSearch(props) };
   }
 };
 </script>
