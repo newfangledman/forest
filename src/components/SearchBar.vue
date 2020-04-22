@@ -1,18 +1,23 @@
 <template>
-  <div>{{ query }}</div>
+  <div>
+    <input type="text" v-model="searchInput" />
+    <pre>{{ results }}</pre>
+  </div>
 </template>
 
 <script>
+import { ref, watch } from "vue";
 import useSearch from "@/use/search";
 export default {
   name: "SearchBar",
   props: {
-    searchOnAttribute: { type: String, default: "commonName" },
-    query: { type: String, default: "" },
+    searchOnAttribute: { type: String, default: "commonname" },
     toSearch: { type: Array, default: () => [] }
   },
   setup(props) {
-    return { ...useSearch(props) };
+    const searchInput = ref("");
+    const results = useSearch({ ...props, query: searchInput });
+    return { searchInput, results };
   }
 };
 </script>

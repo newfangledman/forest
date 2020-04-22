@@ -12,7 +12,7 @@ module.exports.typeDefs = gql`
     FULL
     PARTIAL
     LIGHT  
-}
+  }
 
   enum Water {
     AQUATIC

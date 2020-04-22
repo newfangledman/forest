@@ -1,4 +1,4 @@
-import { ref, computed } from "vue";
+import { ref, computed, Ref } from "vue";
 
   enum Shade {
     PERMANENT,
@@ -7,11 +7,11 @@ import { ref, computed } from "vue";
     NONE
   }
 
-  enum Sun {
+  enum Sun {    
     FULL,
     PARTIAL,
     LIGHT  
-}
+  }
 
   enum Water {
     AQUATIC,
@@ -20,7 +20,7 @@ import { ref, computed } from "vue";
     LOW
   }
 interface UseSearch<T, E> {
-  query: string;
+  query: Ref<string>;
   searchOnAttribute: keyof E;
   toSearch: Array<T>;
 }
@@ -35,10 +35,11 @@ type Plant = PlantSearchable & {
   sun: Sun
 }
 export default function useSearch(props: UseSearch<Plant, PlantSearchable>){
+  console.log(props)
   const toSearch = ref(props.toSearch);
   const result = computed(() =>
     toSearch.value.filter(item =>
-      item[props.searchOnAttribute].startsWith(props.query)
+      item[props.searchOnAttribute].startsWith(props.query.value)
     )
   );
   return {
