@@ -34,6 +34,7 @@ type Plant = PlantSearchable & {
   shade: Shade
   sun: Sun
 }
+
 export default function useSearch(props: UseSearch<Plant, PlantSearchable>){
   console.log(props)
   const toSearch = ref(props.toSearch);

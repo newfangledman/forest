@@ -6,20 +6,22 @@
 </template>
 
 <script>
-import { ref, watch } from "vue";
-import useSearch from "@/use/search";
+import { ref } from 'vue'
+import useSearch from '@/use/search'
 export default {
-  name: "SearchBar",
+  name: 'SearchBar',
   props: {
-    searchOnAttribute: { type: String, default: "commonname" },
-    toSearch: { type: Array, default: () => [] }
+    searchOnAttribute: { type: String, default: 'commonname' },
+    toSearch: { type: Array, default: () => [] },
   },
   setup(props) {
-    const searchInput = ref("");
-    const results = useSearch({ ...props, query: searchInput });
-    return { searchInput, results };
-  }
-};
+    const searchInput = ref('')
+    return {
+      searchInput,
+      ...useSearch({ toSearch: props.toSearch, query: searchInput }),
+    }
+  },
+}
 </script>
 
 <style lang="scss" scoped></style>
