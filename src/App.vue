@@ -10,7 +10,6 @@ import { provide } from 'vue'
 import { store } from '@/store'
 export default {
   setup() {
-    console.log(Symbol.for('PlantStore'), store)
     provide(Symbol.for('PlantStore'), store)
   },
   name: 'App',

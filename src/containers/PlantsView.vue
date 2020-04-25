@@ -1,28 +1,27 @@
 <template>
   <div>
-    <search-bar :toSearch="state.plants"></search-bar>
-    {{ searchResult }}
+    <search-bar></search-bar>
+    {{ searchInput }}
+    <pre>{{ searchResult }}</pre>
   </div>
 </template>
 
 <script>
+import useSearchByCommonName from '@/use/searchByCommonName'
 import SearchBar from '@/components/SearchBar'
 import { getState } from '@/store'
 export default {
   setup() {
-    const { state, getPlants, searchResult } = getState()
+    const { searchInput } = useSearchByCommonName()
+    const { searchResult } = getState()
     return {
-      state,
-      getPlants,
+      searchInput,
       searchResult,
     }
   },
   name: 'PlantsView',
   components: {
     [SearchBar.name]: SearchBar,
-  },
-  created() {
-    this.getPlants()
   },
 }
 </script>

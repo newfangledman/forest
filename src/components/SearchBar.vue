@@ -1,24 +1,17 @@
 <template>
   <div>
     <input type="text" v-model="searchInput" />
-    <pre>{{ results }}</pre>
   </div>
 </template>
 
 <script>
-import { ref } from 'vue'
-import useSearch from '@/use/search'
+import useSearchByCommonName from '@/use/searchByCommonName'
 export default {
   name: 'SearchBar',
-  props: {
-    searchOnAttribute: { type: String, default: 'commonname' },
-    toSearch: { type: Array, default: () => [] },
-  },
-  setup(props) {
-    const searchInput = ref('')
+  setup() {
+    const { searchInput } = useSearchByCommonName()
     return {
       searchInput,
-      ...useSearch({ toSearch: props.toSearch, query: searchInput }),
     }
   },
 }

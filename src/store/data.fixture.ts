@@ -1,7 +1,7 @@
 export default [
   {
     id: "5a4e9y96adk",
-    commonname: "",
+    commonName: "",
     wiki: "",
     latinname: "abelia triflora",
     imageurl: "https://practicalplants.org/wiki/abelia_triflora.jpg",
@@ -13,7 +13,7 @@ export default [
   },
   {
     id: "cce5sc40msi",
-    commonname: "okra",
+    commonName: "okra",
     wiki: "https://practicalplants.org/wiki/okra",
     latinname: "abelmoschus esculentus",
     imageurl: "https://practicalplants.org/wiki/abelmoschus_esculentus2.jpg",
@@ -25,7 +25,7 @@ export default [
   },
   {
     id: "iikhsis8fz8",
-    commonname: "aibika",
+    commonName: "aibika",
     wiki: "https://practicalplants.org/wiki/aibika",
     latinname: "abelmoschus manihot",
     imageurl: "https://practicalplants.org/wiki/abelmoschus_manihot.jpg",
