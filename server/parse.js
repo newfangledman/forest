@@ -41,11 +41,20 @@ function createObj(plant, { printouts }) {
 
   const result = {}
   for (const [key, value] of Object.entries(base)) {
-    result[key.toLowerCase()] =
+    result[camelize(key)] =
       typeof value === 'string' ? value.toLowerCase() : value
   }
   return result
 }
+
+function camelize(str) {
+  return str
+    .replace(/(?:^\w|[A-Z]|\b\w)/g, function(word, index) {
+      return index === 0 ? word.toLowerCase() : word.toUpperCase()
+    })
+    .replace(/\s+/g, '')
+}
+
 fs.writeFile('db.json', JSON.stringify({ data: [...data] }), e => {
   if (e) {
     throw e
