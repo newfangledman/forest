@@ -6,8 +6,6 @@
 
 <script>
 import PlantsView from '@/containers/PlantsView'
-import { provide } from 'vue'
-import { store } from '@/store'
 export default {
   name: 'App',
   components: {

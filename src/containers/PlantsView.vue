@@ -3,7 +3,7 @@
     <search-bar></search-bar>
     {{ searchInput }}
     <div v-for="plant in searchResult" :key="plant.id">
-      <result-card v-bind="plant"></result-card>
+      <result-card :plant="plant"></result-card>
     </div>
   </div>
 </template>
