@@ -1,5 +1,5 @@
 <template>
-  <div v-if="Object.keys($attrs.length)">
+  <div>
     {{ $attrs }}
   </div>
 </template>
@@ -8,9 +8,6 @@
 export default {
   name: 'ResultCard',
   props: { plant: { type: Object, default: () => ({}) } },
-  created() {
-    console.log(this)
-  },
 }
 </script>
 

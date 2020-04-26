@@ -26,7 +26,3 @@ export const store = {
   ...actions,
   ...getters
 }
-
-export function getState() {
-  return inject(Symbol.for('PlantStore'))
-}

@@ -12,11 +12,11 @@
 import useSearchByCommonName from '@/use/searchByCommonName'
 import SearchBar from '@/components/SearchBar'
 import ResultCard from '@/components/ResultCard'
-import { getState } from '@/store'
+import { store } from '@/store'
 export default {
   setup() {
     const { searchInput } = useSearchByCommonName()
-    const { searchResult } = getState()
+    const { searchResult } = store
     return {
       searchInput,
       searchResult,

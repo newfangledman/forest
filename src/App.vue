@@ -9,9 +9,6 @@ import PlantsView from '@/containers/PlantsView'
 import { provide } from 'vue'
 import { store } from '@/store'
 export default {
-  setup() {
-    provide(Symbol.for('PlantStore'), store)
-  },
   name: 'App',
   components: {
     [PlantsView.name]: PlantsView,
