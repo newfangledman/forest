@@ -2,9 +2,11 @@
   <div>
     <search-bar></search-bar>
     {{ searchInput }}
-    <div v-for="plant in searchResult" :key="plant.id">
-      <result-card :plant="plant"></result-card>
-    </div>
+    <section class="plants-view">
+      <div v-for="plant in searchResult" :key="plant.id">
+        <result-card :plant="plant"></result-card>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -30,4 +32,10 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.plants-view {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+</style>

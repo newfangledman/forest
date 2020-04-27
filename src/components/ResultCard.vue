@@ -1,11 +1,11 @@
 <template>
   <div class="card">
+    <img :src="imageUrl" />
     <span> {{ commonName }}</span>
     <span> {{ latinName }}</span>
     <span> {{ water }}</span>
     <span> {{ shade }}</span>
     <span> {{ sun }}</span>
-    <img :src="imageUrl" />
   </div>
 </template>
 
@@ -24,5 +24,9 @@ export default {
 .card {
   display: flex;
   flex-direction: column;
+  max-width: 200px;
+  border: 1px solid black;
+  border-radius: 2px;
+  margin-bottom: 10px;
 }
 </style>
