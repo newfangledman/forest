@@ -1,11 +1,11 @@
 <template>
-  <div id="app">
+  <div id="app-container">
     <plants-view></plants-view>
   </div>
 </template>
 
 <script>
-import PlantsView from '@/containers/PlantsView'
+import PlantsView from '@/views/PlantsView'
 export default {
   name: 'App',
   components: {
@@ -15,12 +15,7 @@ export default {
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+#app-container {
+  display: grid;
 }
 </style>

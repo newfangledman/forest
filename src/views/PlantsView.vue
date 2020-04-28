@@ -1,8 +1,8 @@
 <template>
-  <div>
-    <search-bar></search-bar>
+  <div id="plants-view-wrapper">
+    <search-bar class="top"></search-bar>
     {{ searchInput }}
-    <section class="plants-view">
+    <section class="main">
       <div v-for="plant in searchResult" :key="plant.id">
         <result-card :plant="plant"></result-card>
       </div>
@@ -33,9 +33,20 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.plants-view {
+#plants-view-wrapper {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-areas:
+    '. top .'
+    'main main main';
+}
+.top {
+  grid-area: top;
+  justify-self: center;
+}
+.main {
   margin-top: 10px;
-  display: flex;
-  justify-content: center;
+  justify-self: center;
+  grid-area: main;
 }
 </style>
