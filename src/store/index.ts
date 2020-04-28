@@ -10,7 +10,7 @@ const actions = {
   },
   setState(searchInput: string){
     if(searchInput.length){
-      state.plants = state.plants.filter(plant => plant["commonName"].startsWith(searchInput))
+      state.plants = state.plants.filter(plant => plant["commonName"].toLowerCase().startsWith(searchInput.toLowerCase()))
     }else{
       state.plants = data;
     }
