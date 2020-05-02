@@ -11,6 +11,9 @@ export default {
   components: {
     [PlantsView.name]: PlantsView,
   },
+  created() {
+    console.log(this.$apollo)
+  },
 }
 </script>
 
