@@ -1,5 +1,6 @@
 import { reactive, inject, computed } from 'vue'
 import data from './data.fixture'
+import { Plant } from '@/types'
 const state = reactive({
   plants: data,
 })
@@ -18,9 +19,12 @@ const actions = {
 }
 
 const getters = {
-  searchResult: computed(() => Array.from(new Set([...state.plants])))
+  searchResult: computed(() => filterSearch(Array.from(new Set([...state.plants]))))
 }
 
+function filterSearch(unfilteredResult: Plant[]){
+  return unfilteredResult
+}
 export const store = {
   state,
   ...actions,

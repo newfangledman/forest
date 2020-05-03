@@ -1,27 +1,30 @@
 enum Shade {
-    PERMANENT,
-    PARTIAL,
-    LIGHT,
-    NONE
+    PERMANENT = "permanent",
+    PARTIAL = "partial",
+    LIGHT = "light",
+    NO = "no"
 }
 
 enum Sun {    
-    FULL,
-    PARTIAL,
-    LIGHT  
+    FULL = "full",
+    PARTIAL = "partial" ,
+    LIGHT  = "light"
 }
 
 enum Water {
-    AQUATIC,
-    HIGH,
-    MODERATE,
-    LOW
+    AQUATIC = "aquatic",
+    HIGH = "high",
+    MODERATE = "moderate",
+    LOW = "low"
 }
 
+type ValueOf<T> = T[keyof T];
+
 export type Plant = {
+  id: string
   commonName: string
   latinName: string
-  water: Water
-  shade: Shade
-  sun: Sun
+  water: ValueOf<Water>
+  shade: ValueOf<Shade>
+  sun: ValueOf<Sun>
 }
