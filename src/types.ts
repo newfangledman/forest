@@ -20,11 +20,16 @@ enum Water {
 
 type ValueOf<T> = T[keyof T];
 
-export type Plant = {
-  id: string
-  commonName: string
-  latinName: string
+export type PlantSearchFilter = {
   water: ValueOf<Water>
   shade: ValueOf<Shade>
   sun: ValueOf<Sun>
 }
+
+export type PlantStringSearch = {
+  id: string
+  commonName: string
+  latinName: string
+}
+
+export type Plant = PlantSearchFilter & PlantStringSearch

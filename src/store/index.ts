@@ -1,8 +1,15 @@
 import { reactive, inject, computed } from 'vue'
 import data from './data.fixture'
-import { Plant } from '@/types'
+import { Plant, PlantSearchFilter } from '@/types'
+
+
+const filters: PlantSearchFilter = { water: "", shade: "", sun: "" }
+const plants: Plant[] = data;
+
+
 const state = reactive({
-  plants: data,
+  plants,
+  filters
 })
 
 const actions = {
@@ -15,6 +22,9 @@ const actions = {
     }else{
       state.plants = data;
     }
+  },
+  setFilters(filters: PlantSearchFilter){
+    state.filters = filters
   }
 }
 
