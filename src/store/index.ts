@@ -6,6 +6,10 @@ import { Plant, PlantSearchFilter } from '@/types'
 const filters: PlantSearchFilter = { water: "", shade: "", sun: "" }
 const plants: Plant[] = data;
 
+function filterSearch(unfilteredResult: Plant[], filters: PlantSearchFilter){
+  console.log(filters)
+  return unfilteredResult
+}
 
 const state = reactive({
   plants,
@@ -29,12 +33,9 @@ const actions = {
 }
 
 const getters = {
-  searchResult: computed(() => filterSearch(Array.from(new Set([...state.plants]))))
+  searchResult: computed(() => filterSearch(Array.from(new Set([...state.plants])), state.filters))
 }
 
-function filterSearch(unfilteredResult: Plant[]){
-  return unfilteredResult
-}
 export const store = {
   state,
   ...actions,
