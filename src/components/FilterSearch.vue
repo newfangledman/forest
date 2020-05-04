@@ -8,6 +8,11 @@ export default {
   data() {
     return {
       filters: {
+        water: '',
+        sun: '',
+        shade: '',
+      },
+      options: {
         water: ['full', 'partial', 'light'],
         sun: ['aquatic', 'high', 'moderate', 'low'],
         shade: ['permanent', 'partial', 'light', 'no'],
